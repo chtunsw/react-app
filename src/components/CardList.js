@@ -6,8 +6,8 @@ class CardList extends Component {
         return(
             <div>
                 {
-                    this.props.cardsInfo.map(cardInfo => 
-                    <Card key={cardInfo.img} cardInfo={cardInfo} />)
+                    this.props.cardsInfo.map((cardInfo, index) => 
+                    <Card key={index} cardInfo={cardInfo} />)
                 }
             </div>
         )
