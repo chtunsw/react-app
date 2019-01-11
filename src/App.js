@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Card from './components/Card'
+import CardList from './components/CardList'
+import {cardsInfo} from './components/mockdata'
 import FixedTimeTag from './components/FixedTimeTag'
 import LiveTimeTag from './components/LiveTimeTag'
 
@@ -23,7 +24,7 @@ class App extends Component {
             Learn React
           </a>
         </header>
-        <Card title="sample photo" img="./img/samplePhoto1.jpg" subTitle="photo1" content="sample content" />
+        <CardList cardsInfo={cardsInfo} />
         <FixedTimeTag />
         <LiveTimeTag />
       </div>
