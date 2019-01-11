@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Card from './Card/Card'
+import Card from './components/Card'
+import FixedTimeTag from './components/FixedTimeTag'
+import LiveTimeTag from './components/LiveTimeTag'
 
 class App extends Component {
   render() {
@@ -21,7 +23,9 @@ class App extends Component {
             Learn React
           </a>
         </header>
-        <Card title="sample photo" img="/img/samplePhoto1.jpg" subTitle="photo1" content="sample content" />
+        <Card title="sample photo" img="./img/samplePhoto1.jpg" subTitle="photo1" content="sample content" />
+        <FixedTimeTag />
+        <LiveTimeTag />
       </div>
     );
   }
