@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import CardList from './components/CardList'
-import {cardsInfo} from './components/mockdata'
+import {cardsInfo, cityList} from './components/mockdata'
 import FixedTimeTag from './components/FixedTimeTag'
 import LiveTimeTag from './components/LiveTimeTag'
+import ClockWall from './components/ClockWall'
+import ClockCard from './components/ClockCard'
 
 class App extends Component {
   render() {
@@ -24,6 +26,7 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <ClockWall cities={cityList}/>
         <CardList cardsInfo={cardsInfo} />
         <FixedTimeTag />
         <LiveTimeTag />

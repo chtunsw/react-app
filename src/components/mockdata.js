@@ -1,4 +1,4 @@
-var cardsInfo = [
+const cardsInfo = [
     {
         title:"sample photo1",
         img:"./img/img1.jpg", 
@@ -19,4 +19,6 @@ var cardsInfo = [
     }
 ]
 
-export {cardsInfo}
+const cityList = ['Beijing', 'Moscow', 'Sydney', 'New York']
+
+export {cardsInfo, cityList}
