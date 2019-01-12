@@ -105,7 +105,7 @@ const TimeCard = styled.div`
     position:relative;
     width:300px;
     height:350px;
-    background-color: #15131345;
+    background-color: #7b72722e;
     box-shadow: 10px 10px 10px grey;
     border-radius:10px;
 `;

@@ -12,10 +12,6 @@ class FixedTimeTag extends React.Component {
         super();
         this.state = { time: new Date()}
     }
-
-    componentDidMount() {
-        alert("Did Mount");
-    }
     
     render() {
         return (
