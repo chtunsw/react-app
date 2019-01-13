@@ -7,45 +7,45 @@ class ClockCard extends Component {
         super(props)
         this.state = {
             location: this.props.city,
-            beijingTime: moment().tz("Asia/Shanghai"),
-            moscowTime: moment().tz("Europe/Moscow"),
-            sydneyTime: moment().tz("Australia/Sydney"),
-            newyorkTime: moment().tz("America/New_York")
         }
     }
 
     getLocTime() {
         switch(this.state.location) {
             case 'Beijing':
-            return this.state.beijingTime
+            return moment().tz("Asia/Shanghai")
             case 'Moscow':
-            return this.state.moscowTime
+            return moment().tz("Europe/Moscow")
             case 'Sydney':
-            return this.state.sydneyTime
+            return moment().tz("Australia/Sydney")
             case 'New York':
-            return this.state.newyorkTime
+            return moment().tz("America/New_York")
             default:
         }
     }
 
-    handleClick(num) {
-        switch(num) {
-            case 1:
+    handleClick(loc) {
+        switch(loc) {
+            case 'Beijing':
+            this.resetTimer()
             this.setState({
                 location: 'Beijing',
             })
             break;
-            case 2:
+            case 'Moscow':
+            this.resetTimer()
             this.setState({
                 location: 'Moscow',
             })
             break;
-            case 3:
+            case 'Sydney':
+            this.resetTimer()
             this.setState({
                 location: 'Sydney',
             })
             break;
-            case 4:
+            case 'New York':
+            this.resetTimer()
             this.setState({
                 location: 'New York',
             })
@@ -54,36 +54,28 @@ class ClockCard extends Component {
         }
     }
 
-    componentDidMount() {
-        this.timerId1 = setInterval(() => {
-            this.setState({beijingTime:moment().tz("Asia/Shanghai")})
-        },1000);
-        this.timerId2 = setInterval(() => {
-            this.setState({moscowTime:moment().tz("Europe/Moscow")})
-        },1000);
-        this.timerId3 = setInterval(() => {
-            this.setState({sydneyTime:moment().tz("Australia/Sydney")})
-        },1000);
-        this.timerId4 = setInterval(() => {
-            this.setState({newyorkTime:moment().tz("America/New_York")})
+    resetTimer() {
+        clearInterval(this.timerId)
+        this.timerId = setInterval(() => {
+            this.setState({time: this.getLocTime()})
         },1000);
     }
 
+    componentDidMount() {
+        this.resetTimer()
+    }
+
     componentWillUnmount() {
-        clearInterval(this.timerId1)
-        clearInterval(this.timerId2)
-        clearInterval(this.timerId3)
-        clearInterval(this.timerId4)
+        clearInterval(this.timerId)
     }
 
     render() {
         return(
             <TimeCard>
                 <LocBar>
-                    <LocButton onClick={() => this.handleClick(1)}>Beijing</LocButton>
-                    <LocButton onClick={() => this.handleClick(2)}>Moscow</LocButton>
-                    <LocButton onClick={() => this.handleClick(3)}>Sydney</LocButton>
-                    <LocButton onClick={() => this.handleClick(4)}>New York</LocButton>
+                    {['Beijing', 'Moscow', 'Sydney', 'New York'].map((city) => 
+                        <LocButton key={city} onClick={() => this.handleClick(city)}>{city}</LocButton>
+                    )}
                 </LocBar>
                 <LocName>
                     {this.state.location}
