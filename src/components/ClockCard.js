@@ -118,6 +118,9 @@ const LocButton = styled.button`
     height:100%;
     background-color:white;
     opacity:0.4;
+    &:hover {
+        opacity:0.6;
+    }
 `;
 
 const LocName = styled.div`
