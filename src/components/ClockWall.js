@@ -7,7 +7,7 @@ class ClockWall extends Component {
         return(
             <Wall>
                 {
-                    this.props.cities.map((city) => <ClockCard city={city}/>)
+                    this.props.cities.map((city) => <ClockCard key={city} city={city}/>)
                 }
             </Wall>
         )
