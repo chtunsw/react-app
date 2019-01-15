@@ -24,34 +24,11 @@ class ClockCard extends Component {
         }
     }
 
-    handleClick(loc) {
-        switch(loc) {
-            case 'Beijing':
-            this.resetTimer()
-            this.setState({
-                location: 'Beijing',
-            })
-            break;
-            case 'Moscow':
-            this.resetTimer()
-            this.setState({
-                location: 'Moscow',
-            })
-            break;
-            case 'Sydney':
-            this.resetTimer()
-            this.setState({
-                location: 'Sydney',
-            })
-            break;
-            case 'New York':
-            this.resetTimer()
-            this.setState({
-                location: 'New York',
-            })
-            break;
-            default:
-        }
+    handleClick = (e) => {
+        this.resetTimer()
+        this.setState({
+            location: e.target.id,
+        })
     }
 
     resetTimer() {
@@ -74,7 +51,7 @@ class ClockCard extends Component {
             <TimeCard>
                 <LocBar>
                     {['Beijing', 'Moscow', 'Sydney', 'New York'].map((city) => 
-                        <LocButton key={city} onClick={() => this.handleClick(city)}>{city}</LocButton>
+                        <LocButton id={city} key={city} onClick={this.handleClick}>{city}</LocButton>
                     )}
                 </LocBar>
                 <LocName>
