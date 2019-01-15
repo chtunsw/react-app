@@ -1,0 +1,25 @@
+.FormPaper {
+    display: inline-block;
+    margin: 10px;
+    width: 400px;
+    height: auto;
+    padding: 10px;
+    background-color: #7b72722e;
+    box-shadow: 10px 10px 10px grey;
+    border-radius:10px;
+  }
+
+.FormRow {
+    margin:10px
+}
+
+.FormLabel {
+    float: left;
+    width: 80px;
+    display: inline-block;
+    text-align: right
+}
+
+.FormInput {
+    width: 170px;
+}
