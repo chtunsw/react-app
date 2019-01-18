@@ -1,6 +1,7 @@
 import React from 'react'
-import Axios from 'axios'
+import axios from 'axios'
 import Card from './Card'
+import styled from 'styled-components'
 
 class FetchFlickr extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class FetchFlickr extends React.Component {
 
     handleClick = async () => {
         try {
-            const response = await Axios.get('https://cors-anywhere.herokuapp.com/https://api.flickr.com/services/feeds/photos_public.gne?tags='+this.state.tag+'&format=json&nojsoncallback=true')
+            const response = await axios.get('https://cors-anywhere.herokuapp.com/https://api.flickr.com/services/feeds/photos_public.gne?tags='+this.state.tag+'&format=json&nojsoncallback=true')
             this.setState({data : response.data})
         } catch(err) {
             console.log('error')
@@ -39,8 +40,10 @@ class FetchFlickr extends React.Component {
     render() {
         return(
             <div>
-                <input onChange={this.updateInput} placeholder='input a tag'/>
-                <button onClick={this.handleClick}>feed flickr</button>
+                <InputBox>
+                    <input onChange={this.updateInput} placeholder='input a tag'/>
+                    <button onClick={this.handleClick}>feed flickr</button>
+                </InputBox>
                 {this.state.data && this.getImgs()}
             </div>
         )
@@ -48,3 +51,12 @@ class FetchFlickr extends React.Component {
 }
 
 export default FetchFlickr;
+
+const InputBox = styled.div`
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    background-color: #7b72722e;
+    box-shadow: 10px 10px 10px grey;
+    border-radius:10px;
+`;
