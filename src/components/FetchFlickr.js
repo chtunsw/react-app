@@ -13,7 +13,7 @@ class FetchFlickr extends React.Component {
 
     handleClick = async () => {
         try {
-            const response = await Axios.get('https://cors-anywhere.herokuapp.com/https://api.flickr.com/services/feeds/photos_public.gne?tags=cat&format=json&nojsoncallback=true')
+            const response = await Axios.get('https://cors-anywhere.herokuapp.com/https://api.flickr.com/services/feeds/photos_public.gne?tags='+this.state.tag+'&format=json&nojsoncallback=true')
             this.setState({data : response.data})
         } catch(err) {
             console.log('error')
