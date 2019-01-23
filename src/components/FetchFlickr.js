@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Card from './Card'
-import styled from 'styled-components'
+import './AutoWrapper.css'
 
 class FetchFlickr extends React.Component {
     constructor(props) {
@@ -40,10 +40,10 @@ class FetchFlickr extends React.Component {
     render() {
         return(
             <div>
-                <InputBox>
+                <div className='AutoWrapper'>
                     <input onChange={this.updateInput} placeholder='input a tag'/>
                     <button onClick={this.handleClick}>feed flickr</button>
-                </InputBox>
+                </div>
                 {this.state.data && this.getImgs()}
             </div>
         )
@@ -51,12 +51,3 @@ class FetchFlickr extends React.Component {
 }
 
 export default FetchFlickr;
-
-const InputBox = styled.div`
-    display: inline-block;
-    padding: 10px;
-    margin: 10px;
-    background-color: #7b72722e;
-    box-shadow: 10px 10px 10px grey;
-    border-radius:10px;
-`;

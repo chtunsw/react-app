@@ -5,6 +5,7 @@ import {cardsInfo, cityList} from './components/mockdata'
 import ClockWall from './components/ClockWall'
 import SampleForm from './components/SampleForm'
 import FetchFlickr from './components/FetchFlickr'
+import ReduxSample from './components/ReduxSample'
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <CardList cardsInfo={cardsInfo} />
         <SampleForm />
         <FetchFlickr />
+        <ReduxSample />
       </div>
     );
   }
