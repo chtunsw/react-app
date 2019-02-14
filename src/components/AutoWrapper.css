@@ -1,5 +1,6 @@
 .AutoWrapper {
     display: inline-block;
+    text-align: center;
     padding: 10px;
     margin: 10px;
     background-color: #7b72722e;

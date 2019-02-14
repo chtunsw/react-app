@@ -70,6 +70,7 @@ export default ClockCard;
 
 const TimeCard = styled.div`
     display:inline-block;
+    text-align: center;
     margin:10px;
     position:relative;
     width:300px;

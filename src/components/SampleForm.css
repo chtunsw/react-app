@@ -1,5 +1,6 @@
 .FormPaper {
     display: inline-block;
+    text-align: center;
     margin: 10px;
     width: 400px;
     height: auto;
