@@ -3,13 +3,13 @@ import SampleForm from '../components/SampleForm'
 import FetchFlickr from '../components/FetchFlickr'
 import ReduxSample from '../components/ReduxSample'
 import { Link } from 'react-router-dom'
-import './Page_2.css'
 
-class Page_2 extends React.Component {
+class Page2 extends React.Component {
     render() {
-        return(
+        return (
             <div>
-                <Link className='linkItem' to='/'> index page </Link>
+                <Link to='/'> index page </Link>
+                Page2
                 <SampleForm />
                 <FetchFlickr />
                 <ReduxSample />
@@ -18,4 +18,4 @@ class Page_2 extends React.Component {
     }
 }
 
-export default Page_2
+export default Page2
