@@ -3,6 +3,8 @@ import { Route, Link } from 'react-router-dom'
 
 import NestedDetailPage from './NestedDetailPage'
 
+import './Link.css'
+
 class NestedListPage extends React.Component {
     render() {
         return (
@@ -11,7 +13,7 @@ class NestedListPage extends React.Component {
                 {
                     this.props.location.pathname === '/nested' && (
                         <div>
-                            <Link to='/'> index page </Link>
+                            <Link className='link_block' to='/'> index page </Link>
                             Nested List
                         </div>
                     )

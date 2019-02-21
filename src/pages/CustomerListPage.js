@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import './Link.css'
+
 class CustomerListPage extends React.Component {
     render() {
         return (
             <div>
-                <Link to='/'> index page </Link>
+                <Link className='link_block' to='/'> index page </Link>
                 List Of All Customers
             </div>
         )

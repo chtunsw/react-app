@@ -4,11 +4,13 @@ import FetchFlickr from '../components/FetchFlickr'
 import ReduxSample from '../components/ReduxSample'
 import { Link } from 'react-router-dom'
 
+import './Link.css'
+
 class Page2 extends React.Component {
     render() {
         return (
             <div>
-                <Link to='/'> index page </Link>
+                <Link className='link_block' to='/'> index page </Link>
                 Page2
                 <SampleForm />
                 <FetchFlickr />

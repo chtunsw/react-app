@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import './Link.css'
+
 class Login_Page extends React.Component {
     redirect = async () => {
         try {
@@ -22,7 +24,7 @@ class Login_Page extends React.Component {
     render() {
         return (
             <div>
-                <Link to='/'> index page </Link>
+                <Link className='link_block' to='/'> index page </Link>
                 Login_Page
                 <button onClick={this.redirect}> login </button>
                 <button onClick={this.clear_localStorage}> clear storage </button>
